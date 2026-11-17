@@ -35,4 +35,4 @@ workbench/index.html
 
 [Roadmap](ROADMAP.md) | [OmniPython](https://omnipython.org/)
 
-Made by PyDevices.
+Made by [PyDevices](https://pydevices.com).
