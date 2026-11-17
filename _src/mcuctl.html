@@ -5,24 +5,49 @@
       <h1>MCU Control</h1>
       <p class="lede">The board tool for MicroPython-compatible and
         CircuitPython-compatible boards. It moves files, runs code, opens the REPL,
-        installs packages and flashes firmware, from VS Code, from a browser tab or
-        from a terminal, over USB, Wi-Fi or Bluetooth.</p>
+        installs packages and flashes firmware, from a terminal, from VS Code or from a desktop app, over USB, Wi-Fi or Bluetooth.</p>
     </div>
 
     <dl class="facts">
       <dt>Command</dt><dd><code>mcuctl</code></dd>
-      <dt>Comes as</dt><dd>a CLI, an extension for VS Code and Cursor, and a browser interface</dd>
+      <dt>Comes as</dt><dd>MCU Control CLI, MCU Control for VS Code and MCU Control Desktop</dd>
       <dt>Source</dt><dd><a href="https://github.com/PyDevices/mcuctl">PyDevices/mcuctl</a>, MIT licensed</dd>
     </dl>
 
     <section>
-      <h2><span class="n">01</span>Install</h2>
+      <h2><span class="n">01</span>The three parts</h2>
+      <p>They share one settings file and the same commands underneath, so pick the
+        one that suits how you work.</p>
+
+      <h3>MCU Control CLI</h3>
+      <p>The <code>mcuctl</code> command, with a browser interface
+        (<code>python -m mcuctl</code>) for files, the REPL and firmware. It needs
+        Python 3.9 or newer.</p>
       <pre><code>pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ mcuctl</code></pre>
-      <p>That installs the <code>mcuctl</code> command and the browser interface
-        (<code>python -m mcuctl</code>). For VS Code, Cursor and other compatible
-        editors, download <code>mcuctl-*.vsix</code> from the
-        <a href="https://github.com/PyDevices/mcuctl/releases/latest">latest release</a>
-        and run <strong>Extensions: Install from VSIX…</strong>.</p>
+      <p>Only pre-releases are out so far, which is why the line names TestPyPI.
+        <a href="https://github.com/PyDevices/mcuctl/blob/main/docs/get-started/install.md">Install</a>
+        and the <a href="https://github.com/PyDevices/mcuctl/blob/main/docs/reference/cli.md">CLI reference</a>
+        cover the rest.</p>
+
+      <h3>MCU Control for VS Code</h3>
+      <p>The same tool inside VS Code, Cursor, VSCodium and Google Antigravity: a
+        dual-pane file view, the REPL, packages and firmware download and flash. It
+        isn't on the VS Code Marketplace or Open VSX. Download
+        <code>mcuctl-*.vsix</code> from the
+        <a href="https://github.com/PyDevices/mcuctl/releases">releases</a>, then run
+        <strong>Extensions: Install from VSIX…</strong>.
+        <a href="https://github.com/PyDevices/mcuctl/blob/main/docs/get-started/install.md#vs-code-and-compatible-editors">Install</a>
+        has the details.</p>
+
+      <h3>MCU Control Desktop</h3>
+      <p>The tool as an app of its own, for Windows and Linux, with its own Python
+        inside, so there is nothing to <code>pip install</code> first. It can also
+        open a simulated board in a second window. It is a preview: the installers
+        are on the <a href="https://github.com/PyDevices/mcuctl/releases">releases</a>
+        page (<code>.exe</code> for Windows, <code>.deb</code> and
+        <code>.AppImage</code> for Linux), they aren't signed yet, and it doesn't
+        update itself. See the
+        <a href="https://github.com/PyDevices/mcuctl/blob/main/desktop/README.md">Desktop README</a>.</p>
     </section>
 
     <section>
@@ -41,7 +66,7 @@ mcuctl hold stop -d micropython</code></pre>
       <ul class="links">
         <li><a href="https://github.com/PyDevices/mcuctl/blob/main/docs/index.md">Documentation</a> <span>install, guides and the CLI reference</span></li>
         <li><a href="https://github.com/PyDevices/mcuctl/blob/main/docs/guides/drive-a-board-from-an-agent.md">Drive a board from an agent</a> <span>the CLI and <code>mcuctl hold</code> for coding agents</span></li>
-        <li><a href="https://github.com/PyDevices/mcuctl/releases/latest">Releases</a> <span>the extension and the desktop installers</span></li>
+        <li><a href="https://github.com/PyDevices/mcuctl/releases">Releases</a> <span>the wheel, the extension and the desktop installers</span></li>
         <li><a href="https://github.com/PyDevices/mcuctl/blob/main/CODE_SIGNING_POLICY.md">Code signing policy</a> <span>who builds and signs the Windows installer, and what it sends over the network</span></li>
       </ul>
     </section>
