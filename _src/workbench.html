@@ -1,0 +1,41 @@
+@title Workbench - PyDevices
+@desc Workbench is a MicroPython IDE in your browser, with a built-in device simulator and USB, Bluetooth and WebREPL connections to real boards.
+    <div class="title-block">
+      <p class="kicker">Browser IDE</p>
+      <h1>Workbench</h1>
+      <p class="lede">A MicroPython IDE that runs in your browser, with a built-in
+        simulator for MicroPython-compatible devices and the OmniPython libraries,
+        and USB, Bluetooth and WebREPL connections to real boards.</p>
+      <a class="button" href="https://workbench.pydevices.com/">Open Workbench</a>
+    </div>
+
+    <dl class="facts">
+      <dt>Install</dt><dd>nothing; Chrome and Edge can also install it as an app</dd>
+      <dt>Address</dt><dd><a href="https://workbench.pydevices.com/">workbench.pydevices.com</a></dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/workbench">PyDevices/workbench</a>, a fork of <a href="https://github.com/vshymanskyy/ViperIDE">ViperIDE</a> by Volodymyr Shymanskyy</dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Try it</h2>
+      <p>Press the simulator button, then type these lines at the <code>&gt;&gt;&gt;</code>
+        prompt to draw on the simulated display:</p>
+      <pre><code>from board_config import display_drv
+import pygraphics as pg
+from palettes import get_palette
+pal = get_palette()
+w, h = display_drv.width, display_drv.height
+buf = bytearray(w * h * 2)
+fb = pg.FrameBuffer(buf, w, h, pg.RGB565)
+pg.fill(fb, pal.NAVY)
+pg.circle(fb, w // 2, h // 2, 80, pal.CYAN)
+display_drv.blit_rect(buf, 0, 0, w, h)</code></pre>
+      <p>A cyan circle appears on the navy display.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/workbench/blob/main/docs/index.md">Documentation</a> <span>connecting boards, sharing install links and the URL parameters</span></li>
+        <li><a href="https://github.com/PyDevices/workbench/blob/main/docs/reference/supported-boards.md">Supported boards</a> <span>what connects, and how</span></li>
+      </ul>
+    </section>

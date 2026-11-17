@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Written by tools/build.py from _src/workbench.html; edit that file and run it again. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workbench - PyDevices</title>
+  <meta name="description" content="Workbench is a MicroPython IDE in your browser, with a built-in device simulator and USB, Bluetooth and WebREPL connections to real boards.">
+  <meta name="theme-color" content="#0b2a4a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="canonical" href="https://pydevices.com/workbench/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="rail">
+    <a class="home" href="/"><img src="/assets/logo.svg" alt="" width="40" height="40">PyDevices</a>
+    <nav aria-label="Pages">
+      <ol>
+        <li><a href="/">PyDevices</a></li>
+        <li><a href="/mcuctl/">MCU Control</a></li>
+        <li><a href="/mpvst/">mpvst</a></li>
+        <li><a href="/workbench/" aria-current="page">Workbench</a></li>
+      </ol>
+    </nav>
+    <p class="foot">Free and open source.<br><a href="https://github.com/PyDevices">github.com/PyDevices</a></p>
+  </header>
+  <main>
+    <div class="title-block">
+      <p class="kicker">Browser IDE</p>
+      <h1>Workbench</h1>
+      <p class="lede">A MicroPython IDE that runs in your browser, with a built-in
+        simulator for MicroPython-compatible devices and the OmniPython libraries,
+        and USB, Bluetooth and WebREPL connections to real boards.</p>
+      <a class="button" href="https://workbench.pydevices.com/">Open Workbench</a>
+    </div>
+
+    <dl class="facts">
+      <dt>Install</dt><dd>nothing; Chrome and Edge can also install it as an app</dd>
+      <dt>Address</dt><dd><a href="https://workbench.pydevices.com/">workbench.pydevices.com</a></dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/workbench">PyDevices/workbench</a>, a fork of <a href="https://github.com/vshymanskyy/ViperIDE">ViperIDE</a> by Volodymyr Shymanskyy</dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Try it</h2>
+      <p>Press the simulator button, then type these lines at the <code>&gt;&gt;&gt;</code>
+        prompt to draw on the simulated display:</p>
+      <pre><code>from board_config import display_drv
+import pygraphics as pg
+from palettes import get_palette
+pal = get_palette()
+w, h = display_drv.width, display_drv.height
+buf = bytearray(w * h * 2)
+fb = pg.FrameBuffer(buf, w, h, pg.RGB565)
+pg.fill(fb, pal.NAVY)
+pg.circle(fb, w // 2, h // 2, 80, pal.CYAN)
+display_drv.blit_rect(buf, 0, 0, w, h)</code></pre>
+      <p>A cyan circle appears on the navy display.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/workbench/blob/main/docs/index.md">Documentation</a> <span>connecting boards, sharing install links and the URL parameters</span></li>
+        <li><a href="https://github.com/PyDevices/workbench/blob/main/docs/reference/supported-boards.md">Supported boards</a> <span>what connects, and how</span></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

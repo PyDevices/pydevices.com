@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Written by tools/build.py from _src/mcuctl.html; edit that file and run it again. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCU Control - PyDevices</title>
+  <meta name="description" content="MCU Control moves files, runs code, opens the REPL, installs packages and flashes firmware on MicroPython-compatible and CircuitPython-compatible boards.">
+  <meta name="theme-color" content="#0b2a4a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="canonical" href="https://pydevices.com/mcuctl/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="rail">
+    <a class="home" href="/"><img src="/assets/logo.svg" alt="" width="40" height="40">PyDevices</a>
+    <nav aria-label="Pages">
+      <ol>
+        <li><a href="/">PyDevices</a></li>
+        <li><a href="/mcuctl/" aria-current="page">MCU Control</a></li>
+        <li><a href="/mpvst/">mpvst</a></li>
+        <li><a href="/workbench/">Workbench</a></li>
+      </ol>
+    </nav>
+    <p class="foot">Free and open source.<br><a href="https://github.com/PyDevices">github.com/PyDevices</a></p>
+  </header>
+  <main>
+    <div class="title-block">
+      <p class="kicker">Board tool</p>
+      <h1>MCU Control</h1>
+      <p class="lede">The board tool for MicroPython-compatible and
+        CircuitPython-compatible boards. It moves files, runs code, opens the REPL,
+        installs packages and flashes firmware, from VS Code, from a browser tab or
+        from a terminal, over USB, Wi-Fi or Bluetooth.</p>
+    </div>
+
+    <dl class="facts">
+      <dt>Command</dt><dd><code>mcuctl</code></dd>
+      <dt>Comes as</dt><dd>a CLI, an extension for VS Code and Cursor, and a browser interface</dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/mcuctl">PyDevices/mcuctl</a>, MIT licensed</dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Install</h2>
+      <pre><code>pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ mcuctl</code></pre>
+      <p>That installs the <code>mcuctl</code> command and the browser interface
+        (<code>python -m mcuctl</code>). For VS Code, Cursor and other compatible
+        editors, download <code>mcuctl-*.vsix</code> from the
+        <a href="https://github.com/PyDevices/mcuctl/releases/latest">latest release</a>
+        and run <strong>Extensions: Install from VSIX…</strong>.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Try it without a board</h2>
+      <p>MCU Control can hold a desktop MicroPython interpreter open the same way it
+        holds a board:</p>
+      <pre><code>mcuctl hold start --spawn micropython
+mcuctl hold ask -d micropython "print(sum(range(10)))" --text
+mcuctl hold stop -d micropython</code></pre>
+      <p>For a board, name its port instead: <code>mcuctl ls -d /dev/ttyACM0 /</code>,
+        or <code>COM3</code> on Windows.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/mcuctl/blob/main/docs/index.md">Documentation</a> <span>install, guides and the CLI reference</span></li>
+        <li><a href="https://github.com/PyDevices/mcuctl/blob/main/docs/guides/drive-a-board-from-an-agent.md">Drive a board from an agent</a> <span>the CLI and <code>mcuctl hold</code> for coding agents</span></li>
+        <li><a href="https://github.com/PyDevices/mcuctl/releases/latest">Releases</a> <span>the extension and the desktop installers</span></li>
+        <li><a href="https://github.com/PyDevices/mcuctl/blob/main/CODE_SIGNING_POLICY.md">Code signing policy</a> <span>who builds and signs the Windows installer, and what it sends over the network</span></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

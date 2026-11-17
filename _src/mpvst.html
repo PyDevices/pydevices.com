@@ -1,0 +1,45 @@
+@title mpvst - PyDevices
+@desc mpvst is a VST3 plug-in whose instruments and effects are MicroPython-compatible scripts.
+    <div class="title-block">
+      <p class="kicker">Plug-in</p>
+      <h1>mpvst</h1>
+      <p class="lede">A VST3 plug-in whose instruments and effects are
+        MicroPython-compatible scripts. Pick one from your DAW's browser, or write
+        your own in a few lines of Python and point the plug-in at the file.</p>
+    </div>
+
+    <dl class="facts">
+      <dt>Format</dt><dd>VST3, for Windows and Linux</dd>
+      <dt>Tested in</dt><dd>REAPER</dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/mpvst">PyDevices/mpvst</a></dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Install</h2>
+      <p>Download the archive for your platform from the
+        <a href="https://github.com/PyDevices/mpvst/releases/latest">latest release</a>.
+        Each has a <code>.sha256</code> beside it to check it against.</p>
+      <pre><code>Windows   run MPVST-&lt;version&gt;-windows-x86_64-setup.exe
+Linux     tar xzf MPVST-&lt;version&gt;-linux-x86_64.tar.gz, then run the install.sh inside it</code></pre>
+      <p>Then rescan plug-ins in your DAW, and make it a real rescan, not a restart:
+        hosts cache what they found last time.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Try this first</h2>
+      <p>Search your FX browser for TR-808, Minimoog or Tape Delay and drop it on a
+        track. Every instrument and effect shows up under its own name and category,
+        with a patch selector, a bypass switch and a slider per macro in its editor.
+        The two MPVST Script Host entries run a script you point them at, and stay
+        silent until you do.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/index.md">Documentation</a> <span>install, your first script and the script API</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/guides/write-a-script.md">Write a script</a> <span>what a script declares, and how macros and patches reach it</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/guides/hear-what-you-wrote.md">Hear what you wrote</a> <span>the ways to turn a project into audio</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/releases/latest">Releases</a> <span>the installers for each platform</span></li>
+      </ul>
+    </section>

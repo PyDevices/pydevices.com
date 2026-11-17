@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Written by tools/build.py from _src/mpvst.html; edit that file and run it again. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mpvst - PyDevices</title>
+  <meta name="description" content="mpvst is a VST3 plug-in whose instruments and effects are MicroPython-compatible scripts.">
+  <meta name="theme-color" content="#0b2a4a">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="canonical" href="https://pydevices.com/mpvst/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="rail">
+    <a class="home" href="/"><img src="/assets/logo.svg" alt="" width="40" height="40">PyDevices</a>
+    <nav aria-label="Pages">
+      <ol>
+        <li><a href="/">PyDevices</a></li>
+        <li><a href="/mcuctl/">MCU Control</a></li>
+        <li><a href="/mpvst/" aria-current="page">mpvst</a></li>
+        <li><a href="/workbench/">Workbench</a></li>
+      </ol>
+    </nav>
+    <p class="foot">Free and open source.<br><a href="https://github.com/PyDevices">github.com/PyDevices</a></p>
+  </header>
+  <main>
+    <div class="title-block">
+      <p class="kicker">Plug-in</p>
+      <h1>mpvst</h1>
+      <p class="lede">A VST3 plug-in whose instruments and effects are
+        MicroPython-compatible scripts. Pick one from your DAW's browser, or write
+        your own in a few lines of Python and point the plug-in at the file.</p>
+    </div>
+
+    <dl class="facts">
+      <dt>Format</dt><dd>VST3, for Windows and Linux</dd>
+      <dt>Tested in</dt><dd>REAPER</dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/mpvst">PyDevices/mpvst</a></dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Install</h2>
+      <p>Download the archive for your platform from the
+        <a href="https://github.com/PyDevices/mpvst/releases/latest">latest release</a>.
+        Each has a <code>.sha256</code> beside it to check it against.</p>
+      <pre><code>Windows   run MPVST-&lt;version&gt;-windows-x86_64-setup.exe
+Linux     tar xzf MPVST-&lt;version&gt;-linux-x86_64.tar.gz, then run the install.sh inside it</code></pre>
+      <p>Then rescan plug-ins in your DAW, and make it a real rescan, not a restart:
+        hosts cache what they found last time.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Try this first</h2>
+      <p>Search your FX browser for TR-808, Minimoog or Tape Delay and drop it on a
+        track. Every instrument and effect shows up under its own name and category,
+        with a patch selector, a bypass switch and a slider per macro in its editor.
+        The two MPVST Script Host entries run a script you point them at, and stay
+        silent until you do.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/index.md">Documentation</a> <span>install, your first script and the script API</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/guides/write-a-script.md">Write a script</a> <span>what a script declares, and how macros and patches reach it</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/blob/main/docs/guides/hear-what-you-wrote.md">Hear what you wrote</a> <span>the ways to turn a project into audio</span></li>
+        <li><a href="https://github.com/PyDevices/mpvst/releases/latest">Releases</a> <span>the installers for each platform</span></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
