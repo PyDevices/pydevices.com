@@ -22,7 +22,7 @@ PAGES = [
     ("/", "PyDevices"),
     ("/mcuctl/", "MCU Control"),
     ("/mpvst/", "mpvst"),
-    ("/workbench/", "Workbench"),
+    ("/workbench/", "PyDevices Workbench"),
 ]
 
 HEAD = """<!DOCTYPE html>
