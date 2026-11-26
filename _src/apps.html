@@ -1,0 +1,74 @@
+@title Apps - PyDevices
+@desc Finished apps for a board with a screen, or a desktop: Home and Watch to start them from, and apps for music, audio, cameras, calls, the desk and the board itself.
+    <div class="title-block">
+      <p class="kicker">Apps</p>
+      <h1>PyDevices Apps</h1>
+      <p class="lede">Finished apps for a board with a screen, or a desktop: Home
+        and Watch to start them from, and apps for music, MIDI and audio, cameras
+        and calls, the clock and the weather, remotes, and the board itself. They
+        are written in Python on OmniPython.</p>
+      <a class="button" href="https://github.com/PyDevices/apps/blob/main/docs/reference/apps.md">See every app</a>
+    </div>
+
+    <dl class="facts">
+      <dt>Install</dt><dd>one <code>omip</code> line on a Wi-Fi board, <code>pip</code> on a computer</dd>
+      <dt>Runs on</dt><dd>MicroPython-compatible and CircuitPython-compatible boards with LVGL, and desktop Python</dd>
+      <dt>Source</dt><dd><a href="https://github.com/PyDevices/apps">PyDevices/apps</a>, MIT licensed</dd>
+    </dl>
+
+    <section>
+      <h2><span class="n">01</span>Put them on a board</h2>
+      <p>The board needs OmniPython firmware with LVGL, its board config and Wi-Fi.
+        At its REPL, the first line puts every app on it, each with what it needs,
+        and the second starts Home when the board starts:</p>
+      <pre><code>import omip
+omip.install("github:PyDevices/apps/apps")
+omip.install("github:PyDevices/apps/apps/home/main.py", target="/")</code></pre>
+      <p>Reset the board, and Home comes up with a tile for each app. To put on
+        one app at a time, name its folder instead:</p>
+      <pre><code>omip.install("github:PyDevices/apps/apps/clock")</code></pre>
+      <p><a href="https://github.com/PyDevices/apps/blob/main/docs/guides/install-an-app.md">Install an app</a>
+        has the board config line, CircuitPython's extra step, updating, and how
+        to start in one app with Home behind it.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">02</span>Home and Watch</h2>
+      <p>Home is the home screen: a tile for each installed app, on a tab per
+        category. On a round or small screen, Home's <code>main.py</code> starts
+        Watch instead: a watch face with the date, the battery and today's steps,
+        then a wheel of the same apps. Swipe sideways for another face, and tap
+        for the wheel.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">03</span>What there is</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/reference/apps.md">Music</a> <span>Synth Station, Backline, midiEngine, MIDI Controller and Stompbox</span></li>
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/reference/apps.md">Listening</a> <span>Spotify, Bluetooth Receiver, the MP3 player and the USB sound card</span></li>
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/reference/apps.md">Cameras and calls</a> <span>a video camera, object detection, a doorbell, a videophone and a walkie-talkie</span></li>
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/guides/put-a-clock-on-your-desk.md">On a desk</a> <span>Clock, Weather and Steps</span></li>
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/reference/apps.md">The board</a> <span>Info, Settings, the REPL, the Shell, Touch and Battery</span></li>
+      </ul>
+      <p>Every app installs on any board, and one that can't run there says why
+        when you start it.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">04</span>On a computer</h2>
+      <p>pip installs every app as the package <code>apps</code>, with the
+        libraries they share:</p>
+      <pre><code>pip install "omnipython-apps @ git+https://github.com/PyDevices/apps#subdirectory=apps"</code></pre>
+      <p>The libraries alone (appkit, controlkit, touchkit and the rest) are one
+        package, <code>omnipython-applibs</code> from PyPI or <code>applibs</code>
+        from <a href="https://lib.omnipython.org/">lib.omnipython.org</a>, for
+        writing apps of your own.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">05</span>Read more</h2>
+      <ul class="links">
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/index.md">Documentation</a> <span>install, guides, the reference and how the apps are built</span></li>
+        <li><a href="https://github.com/PyDevices/apps/blob/main/docs/guides/freeze-the-apps.md">Freeze the apps</a> <span>build them into a firmware instead</span></li>
+      </ul>
+    </section>

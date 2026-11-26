@@ -2,7 +2,7 @@
 
 # pydevices.com
 
-The source of <https://pydevices.com/>: the PyDevices company page and a page each for the tools you run, MCU Control, mpvst and Workbench. It is plain HTML and CSS, served by GitHub Pages.
+The source of <https://pydevices.com/>: the PyDevices company page and a page each for the tools you run, MCU Control, mpvst and Workbench, and one for the apps. It is plain HTML and CSS, served by GitHub Pages.
 
 ## Install
 
@@ -27,6 +27,7 @@ python3 tools/build.py
 It prints the pages it wrote:
 
 ```text
+apps/index.html
 index.html
 mcuctl/index.html
 mpvst/index.html
